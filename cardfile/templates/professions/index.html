@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p class="lead">Профессии</p>
+  <p class="text-right">
+    <a href="{% url 'profession_create' %}" class="button">
+      Добавить профессию
+    </a>
+  </p>
+<table class="table">
+  <thead>
+        <tr>
+            <th>Наименование</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for c in professions %}
+        <tr>
+            <td>{{ c.name }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

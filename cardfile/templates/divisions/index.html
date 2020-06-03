@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p class="lead">Подразделения</p>
+  <p class="text-right">
+    <a href="{% url 'division_create' %}" class="button">
+      Добавить подразделение
+    </a>
+  </p>
+<table class="table">
+  <thead>
+        <tr>
+            <th>Наименование</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for c in divisions %}
+        <tr>
+            <td>{{ c.name }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p class="lead">Работники</p>
+  <p class="text-right">
+    <a href="{% url 'worker_create' %}" class="button">
+      Добавить работника
+    </a>
+  </p>
+<table class="table">
+  <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Подразделение</th>
+            <th>Должность</th>
+            <th>Оклад</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for c in workers %}
+        <tr>
+            <td>{{ c.firstname }}</td>
+            <td>{{ c.secondname }}</td>
+            <td>{{ c.division }}</td>
+            <td>{{ c.profession }}</td>
+            <td>{{ c.salary }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
